@@ -9,6 +9,5 @@ def buscaCEP(cep):
         cidade = dic_requisicao['localidade']
         bairro = dic_requisicao['bairro']
 
-        print(dic_requisicao)
     else:
         print('CEP Invalido!')

@@ -1,5 +1,6 @@
 import sqlite3
 from sqlite3 import Error
+import main
 
 # criar conexao
 def ConexaoBanco():
@@ -13,11 +14,6 @@ def ConexaoBanco():
 
 vcon = ConexaoBanco()
 
-nome = input('Informe seu nome: ')
-email = input('Informe seu email: ')
-cep = input('Informe seu cep: ')
-
-vsql = "INSERT INTO cadastro (NOME, EMAIL, CEP) VALUES('"+nome+"', '"+email+"', '"+cep+"')"
 
 def criarTabela(conexao, sql):
     try:
@@ -37,4 +33,15 @@ def inserir(conexao, sql):
     except Error as ex:
         print(ex)
 
-inserir(vcon, vsql)
+def deletar(conexao, sql):
+    try:
+        c = conexao.cursor()
+        c.execute(sql)
+        conexao.commit()
+    except Error as ex:
+        print(ex)
+    finally:
+        print('Registro deletado')
+
+
+
