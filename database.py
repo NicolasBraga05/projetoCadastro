@@ -1,6 +1,6 @@
 import sqlite3
 from sqlite3 import Error
-import main
+
 
 # criar conexao
 def ConexaoBanco():
@@ -42,6 +42,34 @@ def deletar(conexao, sql):
         print(ex)
     finally:
         print('Registro deletado')
+
+
+def atualizar(conexao, sql):
+    try:
+        c = conexao.cursor()
+        c.execute(sql)
+        conexao.commit()
+    except Error as ex:
+        print(ex)
+    finally:
+        print('Registro atualizado')
+
+def consultar(conexao, sql):
+    c = conexao.cursor()
+    c.execute(sql)
+    resultado = c.fetchall()
+    return resultado
+
+vsql = "SELECT * FROM cadastro WHERE NOME LIKE '%a%'"
+
+res = consultar(vcon, vsql)
+
+for r in res:
+    print(r)
+
+
+
+
 
 
 

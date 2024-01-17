@@ -10,8 +10,9 @@ def menu():
         if escolha == 1:
             nome = str(input('Informe seu nome completo: '))
             email = str(input('Informe o seu email: '))
-            cep = str(input('Informe o seu cep (ex: 00.000-000: '))
-            vsql = "INSERT INTO cadastro (NOME, EMAIL, CEP) VALUES('"+nome+"', '"+email+"', '"+cep+"')"
+            cep = str(input('Informe o seu cep (ex: 00.000-000): '))
+            cpf = str(input('Informe seu CPF: (ex: 000.000.000-00): '))
+            vsql = "INSERT INTO cadastro (NOME, EMAIL, CEP, CPF) VALUES('"+nome+"', '"+email+"', '"+cep+"', '"+cpf+"')"
             database.inserir(database.vcon, vsql)
         elif escolha == 3:
             print('PROGRAMA ENCERRADO')
