@@ -41,6 +41,7 @@ def menu():
                     i+=1
                     print(i)
                     sleep(1)
+                erro_senha = 0
             else:
                 login = input('Informe seu login: ')
                 senha = input('Informe sua senha:  ')
