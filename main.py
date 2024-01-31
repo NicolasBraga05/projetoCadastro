@@ -12,10 +12,10 @@ def menu():
             print('MENU DE CADASTRO')
             print('*******************************')
             print('')
-            escolha = int(input('1- Para realizar cadastro | 2- Para consultar cadastro | 3- Para encerrar o programa: '))
             while True:
+                escolha = int(input('1- Para realizar cadastro | 2- Para consultar cadastro | 3- Para encerrar o programa: '))
                 if escolha == 1:
-                    nome = str(input('Informe seu nome completo: '))
+                    nome = str(input('Informe seu nome: '))
                     email = str(input('Informe o seu email: '))
                     cep = str(input('Informe o seu cep (ex: 00.000-000): '))
                     cpf = str(input('Informe seu CPF (ex: 000.000.000-00): '))

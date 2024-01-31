@@ -4,7 +4,7 @@ from sqlite3 import Error
 
 # criar conexao
 def ConexaoBanco():
-    caminho = "C://Users//DevNi//PycharmProjects//banco_de_dados.db"
+    caminho = "C://Users//DevNi//PycharmProjects//database.db"
     con = None
     try:
         con = sqlite3.connect(caminho)
@@ -33,6 +33,7 @@ def inserir(conexao, sql):
     except Error as ex:
         print(ex)
 
+
 def deletar(conexao, sql):
     try:
         c = conexao.cursor()
@@ -60,12 +61,7 @@ def consultar(conexao, sql):
     resultado = c.fetchall()
     return resultado
 
-vsql = "SELECT * FROM cadastro WHERE NOME LIKE '%a%'"
 
-res = consultar(vcon, vsql)
-
-for r in res:
-    print(r)
 
 
 
